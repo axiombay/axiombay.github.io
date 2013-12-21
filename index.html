@@ -1,0 +1,190 @@
+﻿<html>
+  
+  <head>
+   <title>
+     Welcome
+   </title>
+  
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" >
+      
+     function top_index()
+     {
+       
+       if(navigator.appName=="Microsoft Internet Explorer")
+          {            
+            document.getElementById('div1').style.left="0";
+            document.getElementById('div2').style.left="-495";
+            document.getElementById('div1').style.top="-200";
+            document.getElementById('div2').style.top="-130";
+          }
+       
+        start_animation1();
+     }
+
+     
+   
+    </script>
+  </head>
+  <body onLoad="top_index()">
+  
+   
+ 
+  <script type="text/javascript" >
+     var err1=0;
+    
+         
+    
+      
+      function start_animation1()
+        {
+          load_images();
+        }
+       function load_images()
+        {
+          $("#img45")
+             .load('',function()
+                   {
+                    
+                    run_animation1(1);
+                   })
+             .error('',function()
+                   {
+                    run_animation1(-1);
+                   });
+
+          $("#img44")
+             .load('',function()
+                   {
+                    run_animation1(1);
+                   })
+              .error('',function()
+                   {
+                    run_animation1(-1);
+                   });
+         
+        
+         
+
+        }
+       
+       function run_animation1(err)
+        {
+           
+          $(document).ready(function(){
+              
+             if(err==0)
+               {
+                 $("#img2").src="intro/loader1.png";
+               }
+             else
+               {
+                
+                 err=err+1;
+                 if(err==2)
+                   {
+                    
+                    
+                
+                       run_animation2();
+               
+                
+                     
+                      
+                   }
+               }
+             
+
+           });
+        }
+
+       function run_animation2()                      
+        {
+          
+                     $("#div2").css("visibility","hidden");
+                   
+                   
+                   
+                    
+                     $("#div44").css("visibility","visible");
+                     $("#div43").css("visibility","visible");
+                     $("#div42").css("visibility","visible");
+                     $("#div41").css("visibility","visible");
+                     $("#div45").css("visibility","visible");
+
+                     $("#div45").delay(500);
+                     $("#div45").fadeOut(3000);
+                   
+
+                     $("#div44").delay(2500);
+                     $("#div44").fadeOut(3000);           
+                                                                            
+                     $("#div43").delay(4500);
+                     $("#div43").fadeOut(3000);
+                
+                     $("#div42").delay(8500);
+                     $("#div42").fadeOut(3000);
+                
+                     $("#div41").delay(12500);
+                     $("#div41").fadeOut(4000);
+                
+                       
+                     var t= setInterval('run_animation3()',15500);
+                     
+        }
+
+      function run_animation3()                      
+        {
+           window.location="home.html";
+        } 
+   </script>
+   
+ 
+ 
+  
+ 
+  
+  
+  <table id="maintable" align="center" width="900px" height="600" border="0" cellspacing= "0" rules="none" cellpadding="0"  style="background-image:url('intro/home.jpg')">
+   
+   
+   <tr>
+     <td colspan="2" style="height:100%;width: 100%;text-align:center" >
+      <div id="maindiv" style="position:relative;width:100%;height:600;z-index:0;left:-60">
+       
+               
+                   
+          <div id="div2" style="position:absolute;width:377;height:91;left:340;top:210;z-index:0;visibility:visible">
+               
+                <img id="img2" name="loader" src="intro/load_gif.gif" border="0">
+          </div>
+          <div id="div1" style="position:absolute;width:377;height:91;left:330;top:0;z-index:1;visibility:visible">
+               
+                <img id="img1" name="logo" src="intro/logo.png" border="0">
+          </div>
+          <div id="div43" style="position:absolute;width:356;height:266;top:210;left:340;background-color:#ffffff;z-index:5;visibility:hidden">
+                <img id="img43" src="intro/shower.png" border="0">
+          </div>
+          <div id="div41" style="position:absolute;width:356;height:266;top:210;left:340;background-color:#ffffff;z-index:1;visibility:hidden">
+                <img src="intro/patch.png" border="0">
+          </div>
+          <div id="div42" style="position:absolute;width:356;height:256;top:210;left:340;background-color:#ffffff;z-index:2;visibility:hidden">
+                <img src="intro/floor.png" border="0">
+          </div>
+          
+          <div id="div44" style="position:absolute;width:356;height:256;top:210;left:340;background-color:#ffffff;z-index:4;visibility:hidden">
+                <img src="intro/handles.jpg" border="0">
+          </div>
+          <div id="div45" style="position:absolute;width:356;height:256;top:210;left:340;background-color:#ffffff;z-index:5;visibility:hidden">
+                <img id="img45" src="intro/hinges.jpg" border="0">
+          </div>
+          <div id="div46" style="position:absolute;width:120;height:30;top:480;left:607;background-color:#ffffff;z-index:6;visibility:visible">
+             <a href="home.html" style="text-decoration:none"><font id="pfont" style="font-size:21" face="Agency FB" color="red"><span id="pfont1" style="color:grey"> Skip Intro </span></font></a>
+          </div>
+      </div>
+     </td>      
+   </tr>
+  </table>
+ 
+  </body>
+</html>
